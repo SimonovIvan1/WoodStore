@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WoodStore.Models.Goods>
+@{
+    ViewData["Title"] = "Список товаров";
+    
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Магазин строительных материалов</title>
+</head>
+<body>
+    <h3>Товары(Be update)</h3>
+    <table class="table-condensed">
+        <tr>
+            <td>Название</td>
+            <td>Материал</td>
+            <td>Цена за единицу</td>
+            <td>Размер</td>
+        </tr>
+        @foreach (var goods in Model)
+        {
+    <tr>
+        <td>@goods.Name</td>
+        <td>@goods.Material</td>
+        <td>@goods.UnitPrice</td>
+        <td>@goods.Size</td>
+
+    </tr>
+        }
+    </table>
+</body>
+</html>

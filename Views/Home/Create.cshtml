@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Оформление заказа</title>
+</head>
+<body>
+    <div>
+        <h3>Форма оформления покупки</h3>
+        <p>Для оформления покупки заполните следующие поля:</p>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.GoodsId" name="GoodsId" />
+            <table>
+                <tr>
+                    <td>Дата:</td>
+                    <td><input type="text" name="Date" /> </td>
+                </tr>
+                <tr>
+                    <td>Цена:</td>
+                    <td><input type="text" name="Price" /></td>
+                </tr>
+                <tr>
+                    <td>СourierId:</td>
+                    <td><input type="text" name="СourierId" /></td>
+                </tr>
+                <tr>
+                    <td>PickerId:</td>
+                    <td><input type="text" name="PickerId" /></td>
+                </tr>
+                <tr>
+                    <td>SalesManagerId:</td>
+                    <td><input type="text" name="SalesManagerId" /></td>
+                </tr>
+                <tr>
+                    <td>ClientId:</td>
+                    <td><input type="text" name="ClientId" /></td>
+                </tr>
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

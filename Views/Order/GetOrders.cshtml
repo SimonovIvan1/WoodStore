@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WoodStore.Models.Order>
+@{
+    ViewData["Title"] = "Список товаров";
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Магазин строительных материалов</title>
+</head>
+<body>
+    <h3>Заказы(Be update)</h3>
+    <table class="table-condensed">
+        <tr>
+            <td>Дата заказа</td>
+            <td>Цена</td>
+            <td>Id клиента</td>
+            <td>Id курьера</td>
+        </tr>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.Date</td>
+                <td>@order.Price</td>
+                <td>@order.ClientId</td>
+                <td>@order.СourierId</td>
+
+            </tr>
+        }
+    </table>
+</body>
+</html>
