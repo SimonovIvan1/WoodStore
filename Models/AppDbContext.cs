@@ -8,7 +8,7 @@ namespace WoodStore.Models
 {
     public class AppDbContext : DbContext
     {
-        public DbSet<Client> Client { get; set; }
+        public DbSet<Clients> Clients { get; set; }
         public DbSet<Order> Order { get; set; }
         public DbSet<Goods> Goods { get; set; }
 

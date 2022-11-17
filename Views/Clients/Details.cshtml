@@ -1,0 +1,22 @@
+﻿@model WoodStore.Models.Clients
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2>Клиент @Model.Name</h2>
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>Номер клиента</dt>
+        <dd>@Model.Id</dd>
+
+        <dt>Адрес клиента</dt>
+        <dd>@Model.Address</dd>
+
+        <dt>Номер телефона клиента</dt>
+        <dd>@Model.PhoneNumber</dd>
+
+        <dt>Комментарий к заказу</dt>
+        <dd>@Model.Comment</dd>
+
+    </dl>
+</div>

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<WoodStore.Models.Clients>
+@{
+    ViewData["Title"] = "Клиенты";
+
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Магазин строительных материалов</title>
+</head>
+<body>
+    <h3>Клиенты(Be update)</h3>
+    <table class="table-condensed">
+        <tr>
+            <td>Уникальный номер клиента</td>
+            <td>ФИО</td>
+            <td>Номер телефона клиента</td>
+        </tr>
+        @foreach (var client in Model)
+        {
+    <tr>
+        <td>@client.Id</td>
+        <td>@client.Name</td>
+        <td>@client.PhoneNumber</td>
+        <td>
+            <a asp-action="Details" asp-controller="Clients" asp-route-id="@client.Id">Подробнее</a> |
+            <a asp-action="Edit" asp-controller="Clients" asp-route-id="@client.Id">Изменить</a> |
+            <a asp-action="Delete" asp-controller="Clients" asp-route-id="@client.Id">Удалить</a>
+        </td>
+    </tr>
+        }
+    </table>
+</body>
+</html>

@@ -15,6 +15,6 @@ namespace WoodStore.Models
         public int SalesManagerId { get; set; }
 
         public int ClientId { get; set; }
-        public Client Client { get; set; }
+        public Clients Client { get; set; }
     }
 }

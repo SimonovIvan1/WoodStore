@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<WoodStore.Models.Order>
 @{
-    ViewData["Title"] = "Список товаров";
+    ViewData["Title"] = "Список заказов";
 
 }
 <!DOCTYPE html>
@@ -24,7 +24,6 @@
         <td>@order.Date</td>
         <td>@order.Price</td>
         <td>@order.ClientId</td>
-        <td>@order.СourierId</td>
         <td>
             <a asp-action="Details" asp-controller="Order" asp-route-id="@order.Id">Подробнее</a> |
             <a asp-action="Edit" asp-controller="Order" asp-route-id="@order.Id">Изменить</a> |
