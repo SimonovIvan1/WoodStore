@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using WoodStore.Data;
 using WoodStore.Models;
 
 namespace WoodStore.Controllers
