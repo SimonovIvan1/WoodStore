@@ -1,5 +1,7 @@
 ﻿using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WoodStore.Models;
 
 namespace WoodStore.Controllers
@@ -29,6 +31,16 @@ namespace WoodStore.Controllers
         public IActionResult Index()
         {
             return View(db.Goods.ToList());
+        }
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id != null)
+            {
+                Goods goods = await db.Goods.FirstOrDefaultAsync(p => p.Id == id);
+                if (goods != null)
+                    return View(goods);
+            }
+            return NotFound();
         }
     }
 }

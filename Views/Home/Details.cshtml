@@ -1,0 +1,25 @@
+﻿@model WoodStore.Models.Goods
+@{
+    ViewBag.Title = Model.Name;
+}
+<h2>Пользователь @Model.Name</h2>
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>Номер товара</dt>
+        <dd>@Model.Id</dd>
+
+        <dt>Название товара</dt>
+        <dd>@Model.Name</dd>
+
+        <dt>Материал, из которого изготовлен товар</dt>
+        <dd>@Model.Material</dd>
+
+        <dt>Размер товара</dt>
+        <dd>@Model.Size</dd>
+
+        <dt>Цена за единицу товара</dt>
+        <dd>@Model.UnitPrice</dd>
+
+    </dl>
+</div>

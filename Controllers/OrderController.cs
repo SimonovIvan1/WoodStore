@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace WoodStore.Controllers
             ViewBag.OrderId = id;
             return View();
         }
+
         [HttpPost]
         public string Create(Order order)
         {
@@ -30,9 +32,21 @@ namespace WoodStore.Controllers
             db.SaveChanges();
             return "Спасибо за покупку!";
         }
+
         public IActionResult GetOrders()
         {
             return View(db.Order.ToList());
+        }
+
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id != null)
+            {
+                Order order = await db.Order.FirstOrDefaultAsync(p => p.Id == id);
+                if (order != null)
+                return View(order);
+            }
+            return NotFound();
         }
     }
 }
