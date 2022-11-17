@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WoodStore.Models.Interfaces;
 
 namespace WoodStore.Models
 {
-    public class Goods
+    public class Goods : IEntity
     {
         public int Id { get; set; }
         public string Name { get; set; }

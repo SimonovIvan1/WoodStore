@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WoodStore.Data;
+using WoodStore.Data.Interfaces;
+using WoodStore.Data.Repository;
 using WoodStore.Models;
 
 namespace WoodStore
@@ -29,6 +31,8 @@ namespace WoodStore
             string connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
             services.AddControllersWithViews();
+
+            services.AddTransient<IBaseRepository, Repository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
