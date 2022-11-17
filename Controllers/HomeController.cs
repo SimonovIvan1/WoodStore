@@ -42,5 +42,23 @@ namespace WoodStore.Controllers
             }
             return NotFound();
         }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id != null)
+            {
+                Goods goods = await db.Goods.FirstOrDefaultAsync(p => p.Id == id);
+                if (goods != null)
+                    return View(goods);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(Goods goods)
+        {
+            db.Goods.Update(goods);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }

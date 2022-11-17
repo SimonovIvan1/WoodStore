@@ -1,0 +1,25 @@
+﻿@model WoodStore.Models.Goods
+@{
+    ViewBag.Title = "Редактирование товара";
+}
+<form asp-action="Update" asp-controller="Home" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Имя</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Size" class="control-label">Размер товара</label>
+        <input type="text" asp-for="Size" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Material" class="control-label">Материал изготовления</label>
+        <input type="text" asp-for="Material" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ProviderId" class="control-label">Материал изготовления</label>
+        <input type="text" asp-for="ProviderId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </div>
+</form>
