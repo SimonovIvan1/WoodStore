@@ -49,5 +49,52 @@ namespace WoodStore.Controllers
             }
             return NotFound();
         }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id != null)
+            {
+                Order order = await db.Order.FirstOrDefaultAsync(p => p.Id == id);
+                if (order != null)
+                    return View(order);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(Order order)
+        {
+            db.Order.Update(order);
+            await db.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        [ActionName("Delete")]
+        public async Task<IActionResult> ConfirmDelete(int? id)
+        {
+            if (id != null)
+            {
+                Order order = await db.Order.FirstOrDefaultAsync(p => p.Id == id);
+                if (order != null)
+                    return View(order);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id != null)
+            {
+                Order order = await db.Order.FirstOrDefaultAsync(p => p.Id == id);
+                if (order != null)
+                {
+                    db.Order.Remove(order);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("Index");
+                }
+            }
+            return NotFound();
+        }
     }
 }
