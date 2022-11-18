@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Редактирование заказа";
 }
-<form asp-action="Update" asp-controller="Home" asp-route-id="@Model.Id">
+<form asp-action="Update" asp-controller="Order" asp-route-id="@Model.Id">
     <div class="form-group">
         <label asp-for="Date" class="control-label">Имя</label>
         <input type="text" asp-for="Date" class="form-control" />

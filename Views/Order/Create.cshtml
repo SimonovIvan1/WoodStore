@@ -1,11 +1,9 @@
-﻿@{
-    Layout = null;
-}
+﻿@{ Layout = null; }
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Добавление товара</title>
+    <title>Оформление заказа</title>
 </head>
 <body>
     <div>
@@ -15,24 +13,24 @@
             <input type="hidden" value="@ViewBag.GoodsId" name="GoodsId" />
             <table>
                 <tr>
-                    <td>Название товара:</td>
-                    <td><input type="text" name="Name" /> </td>
+                    <td>Дата оформления заказа:</td>
+                    <td><input type="datetime" name="Date" /> </td>
                 </tr>
                 <tr>
-                    <td>Размер товара:</td>
-                    <td><input type="text" name="Size" /></td>
+                    <td>Стоимость заказа:</td>
+                    <td><input type="text" name="Price" /></td>
                 </tr>
                 <tr>
-                    <td>Material:</td>
-                    <td><input type="text" name="Material" /></td>
+                    <td>Курьер:</td>
+                    <td><input type="text" name="CourierId" /></td>
                 </tr>
                 <tr>
-                    <td>Цена за единицу товара:</td>
-                    <td><input type="text" name="UnitPrice" /></td>
+                    <td>Менеджер по продажам:</td>
+                    <td><input type="text" name="SalesManagerId" /></td>
                 </tr>
                 <tr>
-                    <td>Provider Id:</td>
-                    <td><input type="text" name="ProviderId" /></td>
+                    <td>Клиент:</td>
+                    <td><input type="text" name="ClientId" /></td>
                 </tr>
                 <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
             </table>

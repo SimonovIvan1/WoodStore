@@ -1,0 +1,37 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добро пожаловать в наш магазин! Заполните свои контактные данные.</title>
+</head>
+<body>
+    <div>
+        <h3>Форма оформления покупки</h3>
+        <p>Для оформления покупки заполните следующие поля:</p>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.ClientsId" name="ClientsId" />
+            <table>
+                <tr>
+                    <td>Имя клиента:</td>
+                    <td><input type="text" name="Name" /> </td>
+                </tr>
+                <tr>
+                    <td>Номер телефона:</td>
+                    <td><input type="text" name="PhoneNumber" /></td>
+                </tr>
+                <tr>
+                    <td>Адрес:</td>
+                    <td><input type="text" name="Address" /></td>
+                </tr>
+                <tr>
+                    <td>Комментарий клиента к заказу:</td>
+                    <td><input type="text" name="Comment" /></td>
+                </tr>
+
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

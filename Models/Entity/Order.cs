@@ -13,8 +13,6 @@ namespace WoodStore.Models
         public int СourierId { get; set; }
         public int PickerId { get; set; }
         public int SalesManagerId { get; set; }
-
         public int ClientId { get; set; }
-        public Clients Client { get; set; }
     }
 }

@@ -65,7 +65,7 @@ namespace WoodStore.Controllers
         {
             db.Order.Update(order);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("GetOrders");
         }
 
         [HttpGet]
@@ -91,7 +91,7 @@ namespace WoodStore.Controllers
                 {
                     db.Order.Remove(order);
                     await db.SaveChangesAsync();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("GetOrders");
                 }
             }
             return NotFound();

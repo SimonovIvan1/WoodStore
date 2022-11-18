@@ -20,7 +20,7 @@ namespace WoodStore.Controllers
         [HttpGet]
         public IActionResult Create(int? id)
         {
-            if (id == null) return RedirectToAction("Index");
+            if (id == null) return RedirectToAction("GetClients");
             ViewBag.OrderId = id;
             return View();
         }
@@ -42,6 +42,53 @@ namespace WoodStore.Controllers
                 Clients client = await db.Clients.FirstOrDefaultAsync(p => p.Id == id);
                 if (client != null)
                     return View(client);
+            }
+            return NotFound();
+        }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id != null)
+            {
+                Clients clients = await db.Clients.FirstOrDefaultAsync(p => p.Id == id);
+                if (clients != null)
+                    return View(clients);
+            }
+            return NotFound();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Update(Clients clients)
+        {
+            db.Clients.Update(clients);
+            await db.SaveChangesAsync();
+            return RedirectToAction("GetClients");
+        }
+
+        [HttpGet]
+        [ActionName("Delete")]
+        public async Task<IActionResult> ConfirmDelete(int? id)
+        {
+            if (id != null)
+            {
+                Clients clients = await db.Clients.FirstOrDefaultAsync(p => p.Id == id);
+                if (clients != null)
+                    return View(clients);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id != null)
+            {
+                Clients clients = await db.Clients.FirstOrDefaultAsync(p => p.Id == id);
+                if (clients != null)
+                {
+                    db.Clients.Remove(clients);
+                    await db.SaveChangesAsync();
+                    return RedirectToAction("GetClients");
+                }
             }
             return NotFound();
         }
