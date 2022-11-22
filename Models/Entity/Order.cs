@@ -17,7 +17,7 @@ namespace WoodStore.Models
         public Picker Picker { get; set; }
         public int SalesManagerId { get; set; }
         public SalesManager SalesManager { get; set; }
-        public int ClientId { get; set; }
+        public int ClientsId { get; set; }
         public Clients Clients { get; set; }
         public List<GoodsInOrder> GoodsInOrder { get; set; }
 

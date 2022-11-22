@@ -10,7 +10,7 @@ namespace WoodStore.Models.Entity
         public int Id { get; set; }
         public string Name { get; set; }
         public string Telephone { get; set; }
-        public string CarNumberr { get; set; }
+        public string CarNumber { get; set; }
         public List<Order> Order { get; set; }
     }
 }
