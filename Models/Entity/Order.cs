@@ -11,8 +11,8 @@ namespace WoodStore.Models
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public decimal Price { get; set; }
-        public int СourierId { get; set; }
-        public Courier Courier { get; set; }
+        public int DeliveryId { get; set; }
+        public Delivery Delivery { get; set; }
         public int PickerId { get; set; }
         public Picker Picker { get; set; }
         public int SalesManagerId { get; set; }

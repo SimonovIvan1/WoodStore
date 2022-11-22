@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace WoodStore.Models.Entity
 {
-    public class Courier
+    public class Delivery
     {
         public int Id { get; set; }
         public string Name { get; set; }

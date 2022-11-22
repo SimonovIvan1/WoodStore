@@ -10,7 +10,7 @@ namespace WoodStore.Models.Entity
         public int Id { get; set; }
         public int OrderId { get; set; }
         public int GoodCount { get; set; }
-        public int GoodId { get; set; }
+        public int GoodsId { get; set; }
         public Goods Goods { get; set; }
         public Order Order { get; set; }
     }

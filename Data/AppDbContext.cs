@@ -10,7 +10,7 @@ namespace WoodStore.Data
         public DbSet<Order> Order { get; set; }
         public DbSet<Goods> Goods { get; set; }
         public DbSet<GoodsInOrder> GoodsInOrder {get; set;}
-        public DbSet<Courier> Courier { get; set; }
+        public DbSet<Delivery> Courier { get; set; }
         public DbSet<Picker> Picker { get; set; }
         public DbSet<SalesManager> SalesManager { get; set; }
         public DbSet<Provider> Provider { get; set; }
@@ -44,9 +44,9 @@ namespace WoodStore.Data
                    .HasColumnName("PhoneNumber");
             });
 
-            modelBuilder.Entity<Courier>(builder =>
+            modelBuilder.Entity<Delivery>(builder =>
             {
-                builder.ToTable("Courier")
+                builder.ToTable("Delivery")
                     .HasKey(k => k.Id);
 
                 builder.Property(k => k.Id)
@@ -100,7 +100,7 @@ namespace WoodStore.Data
                 builder.Property(k => k.OrderId)
                     .HasColumnName("OrderId");
 
-                builder.Property(k => k.GoodId)
+                builder.Property(k => k.GoodsId)
                     .HasColumnName("GoodId");
 
                 builder.Property(k => k.GoodCount)
@@ -125,14 +125,15 @@ namespace WoodStore.Data
                 builder.Property(k => k.ClientsId)
                     .HasColumnName("ClientsId");
 
+                builder.Property(k => k.DeliveryId)
+                  .HasColumnName("DeliveryId");
+
                 builder.Property(k => k.PickerId)
                    .HasColumnName("PickerId");
 
                 builder.Property(k => k.SalesManagerId)
                    .HasColumnName("SalesManagerId");
 
-                builder.Property(k => k.СourierId)
-                   .HasColumnName("СourierId");
             });
 
             modelBuilder.Entity<Picker>(builder =>
