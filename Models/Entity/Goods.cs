@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WoodStore.Models.Entity;
 
 namespace WoodStore.Models
 {
@@ -13,6 +14,8 @@ namespace WoodStore.Models
         public string Material { get; set; }
         public decimal UnitPrice { get; set; }
         public int ProviderId { get; set; }
+        public Provider Provider { get; set; }
+        public List<GoodsInOrder> GoodsInOrder { get; set; }
 
     }
 }

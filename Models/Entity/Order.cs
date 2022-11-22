@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WoodStore.Models.Entity;
 
 namespace WoodStore.Models
 {
@@ -11,8 +12,14 @@ namespace WoodStore.Models
         public DateTime Date { get; set; }
         public decimal Price { get; set; }
         public int СourierId { get; set; }
+        public Courier Courier { get; set; }
         public int PickerId { get; set; }
+        public Picker Picker { get; set; }
         public int SalesManagerId { get; set; }
+        public SalesManager SalesManager { get; set; }
         public int ClientId { get; set; }
+        public Clients Clients { get; set; }
+        public List<GoodsInOrder> GoodsInOrder { get; set; }
+
     }
 }

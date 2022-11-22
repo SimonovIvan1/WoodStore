@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WoodStore.Models
+namespace WoodStore.Models.Entity
 {
-    public class Clients
+    public class Courier
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public string Comment { get; set; }
+        public string Telephone { get; set; }
+        public string CarNumberr { get; set; }
         public List<Order> Order { get; set; }
     }
 }
