@@ -10,4 +10,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Delivery\" />
+    <Folder Include="Views\GoodsInOrder\" />
+    <Folder Include="Views\Picker\" />
+    <Folder Include="Views\Provider\" />
+    <Folder Include="Views\SalesManager\" />
+  </ItemGroup>
+
 </Project>

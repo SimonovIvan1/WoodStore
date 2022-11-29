@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<WoodStore.Models.Goods>
 @{
     ViewData["Title"] = "Список товаров";
-    
+
 }
 <!DOCTYPE html>
 
@@ -15,7 +15,7 @@
             <a asp-action="Delete" asp-controller="Home">Удалить</a>
         </td>
     </tr>
-    
+
 </head>
 <body>
     <h3>Товары(Be update)</h3>
@@ -28,14 +28,14 @@
         </tr>
         @foreach (var goods in Model)
         {
-    <tr>
-        <td>@goods.Name</td>
-        <td>
-            <a asp-action="Details" asp-controller="Home" asp-route-id="@goods.Id">Подробнее</a> |
-            <a asp-action="Update" asp-controller="Home" asp-route-id="@goods.Id">Изменить</a> |
-            <a asp-action="Delete" asp-controller="Home" asp-route-id="@goods.Id">Удалить</a>
-        </td>
-    </tr>
+            <tr>
+                <td>@goods.Name</td>
+                <td>
+                    <a asp-action="Details" asp-controller="Home" asp-route-id="@goods.Id">Подробнее</a> |
+                    <a asp-action="Update" asp-controller="Home" asp-route-id="@goods.Id">Изменить</a> |
+                    <a asp-action="Delete" asp-controller="Home" asp-route-id="@goods.Id">Удалить</a>
+                </td>
+            </tr>
         }
     </table>
 </body>

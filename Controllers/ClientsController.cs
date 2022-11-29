@@ -21,7 +21,7 @@ namespace WoodStore.Controllers
         public IActionResult Create(int? id)
         {
             if (id == null) return RedirectToAction("GetClients");
-            ViewBag.OrderId = id;
+            ViewBag.ClientsId = id;
             return View();
         }
         [HttpPost]
@@ -29,7 +29,7 @@ namespace WoodStore.Controllers
         {
             db.Clients.Add(client);
             db.SaveChanges();
-            return "Спасибо за покупку!";
+            return "Добавлен новый клиент!";
         }
         public IActionResult GetClients()
         {

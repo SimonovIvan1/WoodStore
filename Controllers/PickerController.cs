@@ -4,13 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WoodStore.Data;
 using WoodStore.Models;
+using WoodStore.Models.Entity;
 
 namespace WoodStore.Controllers
 {
-    public class HomeController : Controller
+    public class PickerController : Controller
     {
         readonly AppDbContext db;
-        public HomeController(AppDbContext context)
+        public PickerController(AppDbContext context)
         {
             db = context;
         }
@@ -18,28 +19,28 @@ namespace WoodStore.Controllers
         [HttpGet]
         public IActionResult Create(int? id)
         {
-            if (id == null) return RedirectToAction("Index");
-            ViewBag.OrderId = id;
+            if (id == null) return RedirectToAction("GetPickers");
+            ViewBag.PickerId = id;
             return View();
         }
         [HttpPost]
-        public string Create(Goods goods)
+        public string Create(Picker picker)
         {
-            db.Goods.Add(goods);
+            db.Picker.Add(picker);
             db.SaveChanges();
-            return "Спасибо за покупку!";
+            return "Добро пожаловать в компанию! :)";
         }
-        public IActionResult Index()
+        public IActionResult GetPickers()
         {
-            return View(db.Goods.ToList());
+            return View(db.Picker.ToList());
         }
         public async Task<IActionResult> Details(int? id)
         {
             if (id != null)
             {
-                Goods goods = await db.Goods.FirstOrDefaultAsync(p => p.Id == id);
-                if (goods != null)
-                    return View(goods);
+                Picker picker = await db.Picker.FirstOrDefaultAsync(p => p.Id == id);
+                if (picker != null)
+                    return View(picker);
             }
             return NotFound();
         }
@@ -48,18 +49,18 @@ namespace WoodStore.Controllers
         {
             if (id != null)
             {
-                Goods goods = await db.Goods.FirstOrDefaultAsync(p => p.Id == id);
-                if (goods != null)
-                    return View(goods);
+                Picker picker = await db.Picker.FirstOrDefaultAsync(p => p.Id == id);
+                if (picker != null)
+                    return View(picker);
             }
             return NotFound();
         }
         [HttpPost]
-        public async Task<IActionResult> Update(Goods goods)
+        public async Task<IActionResult> Update(Picker picker)
         {
-            db.Goods.Update(goods);
+            db.Picker.Update(picker);
             await db.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("GetPickers");
         }
 
         [HttpGet]
@@ -68,9 +69,9 @@ namespace WoodStore.Controllers
         {
             if (id != null)
             {
-                Goods goods = await db.Goods.FirstOrDefaultAsync(p => p.Id == id);
-                if (goods != null)
-                    return View(goods);
+                Picker picker = await db.Picker.FirstOrDefaultAsync(p => p.Id == id);
+                if (picker != null)
+                    return View(picker);
             }
             return NotFound();
         }
@@ -80,12 +81,12 @@ namespace WoodStore.Controllers
         {
             if (id != null)
             {
-                Goods goods = await db.Goods.FirstOrDefaultAsync(p => p.Id == id);
-                if (goods != null)
+                Picker picker = await db.Picker.FirstOrDefaultAsync(p => p.Id == id);
+                if (picker != null)
                 {
-                    db.Goods.Remove(goods);
+                    db.Picker.Remove(picker);
                     await db.SaveChangesAsync();
-                    return RedirectToAction("Index");
+                    return RedirectToAction("GetPickers");
                 }
             }
             return NotFound();

@@ -10,7 +10,7 @@ namespace WoodStore.Data
         public DbSet<Order> Order { get; set; }
         public DbSet<Goods> Goods { get; set; }
         public DbSet<GoodsInOrder> GoodsInOrder {get; set;}
-        public DbSet<Delivery> Courier { get; set; }
+        public DbSet<Delivery> Delivery { get; set; }
         public DbSet<Picker> Picker { get; set; }
         public DbSet<SalesManager> SalesManager { get; set; }
         public DbSet<Provider> Provider { get; set; }

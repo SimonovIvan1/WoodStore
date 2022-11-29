@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WoodStore.Data;
+using WoodStore.Data.Interfaces;
+using WoodStore.Data.Repository;
 using WoodStore.Models;
 
 namespace WoodStore
@@ -55,7 +57,7 @@ namespace WoodStore
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Goods}/{action=GetGoods}/{id?}");
             });
         }
     }
