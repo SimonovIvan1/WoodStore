@@ -1,5 +1,26 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WoodStore.Models.Entity.Delivery
 @{
+    ViewBag.Title = "Удаление курьера";
 }
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>Имя курьера</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>Уникальный номер курьера</dt>
+        <dd>
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+    </dl>
+
+    <div>
+        <form asp-controller="Delivery" asp-action="Delete" method="post">
+            <div class="form-group">
+                <input type="submit" class="btn btn-default" value="Удалить" />
+            </div>
+        </form>
+    </div>
+</div>
