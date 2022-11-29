@@ -9,11 +9,18 @@
 <head>
     <title>Магазин строительных материалов</title>
     <tr>
+        
         <td>
-            <a asp-action="GetOrders" asp-controller="Order">Order</a>
-            <a asp-action="GetClients" asp-controller="Clients">Изменить</a>
-            <a asp-action="Delete" asp-controller="Home">Удалить</a>
+            <a asp-action="GetOrders" asp-controller="Order">Заказы</a>
+            <a asp-action="GetClients" asp-controller="Clients">Клиенты</a>
+            <a asp-action="GetDeliverys" asp-controller="Delivery">Курьеры</a>
+            <a asp-action="GetGoods" asp-controller="Goods">Товары</a>
+            <a asp-action="GetAll" asp-controller="GoodsInOrder">Товары в заказе</a>
+            <a asp-action="GetAll" asp-controller="SalesManager">Менеджеры</a>
+            <a asp-action="GetPickers" asp-controller="Picker">Сборщики</a>
+            <a asp-action="GetProviders" asp-controller="Provider">Поставщики</a>
         </td>
+       
     </tr>
 
 </head>
@@ -31,9 +38,9 @@
             <tr>
                 <td>@goods.Name</td>
                 <td>
-                    <a asp-action="Details" asp-controller="Home" asp-route-id="@goods.Id">Подробнее</a> |
-                    <a asp-action="Update" asp-controller="Home" asp-route-id="@goods.Id">Изменить</a> |
-                    <a asp-action="Delete" asp-controller="Home" asp-route-id="@goods.Id">Удалить</a>
+                    <a asp-action="Details" asp-controller="Goods" asp-route-id="@goods.Id">Подробнее</a> |
+                    <a asp-action="Update" asp-controller="Goods" asp-route-id="@goods.Id">Изменить</a> |
+                    <a asp-action="Delete" asp-controller="Goods" asp-route-id="@goods.Id">Удалить</a>
                 </td>
             </tr>
         }

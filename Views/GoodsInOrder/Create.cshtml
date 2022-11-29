@@ -1,5 +1,32 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление товара в заказ</title>
+</head>
+<body>
+    <div>
+        <p>Для добавления товара заполните следующие поля:</p>
+        <form method="post">
+            <input type="hidden" value="@ViewBag.GoodsInOrderId" name="GoodsInOrderId" />
+            <table>
+                <tr>
+                    <td>Номер заказа:</td>
+                    <td><input type="text" name="OrderId" /> </td>
+                </tr>
+                <tr>
+                    <td>Количество товара:</td>
+                    <td><input type="text" name="GoodCount" /></td>
+                </tr>
+                <tr>
+                    <td>Количество товара:</td>
+                    <td><input type="text" name="GoodId" /></td>
+                </tr>
+
+                <tr><td><input type="submit" value="Отправить" /> </td><td></td></tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

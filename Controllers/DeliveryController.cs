@@ -34,16 +34,6 @@ namespace WoodStore.Controllers
         {
             return View(db.Delivery.ToList());
         }
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id != null)
-            {
-                Delivery delivery = await db.Delivery.FirstOrDefaultAsync(p => p.Id == id);
-                if (delivery != null)
-                    return View(delivery);
-            }
-            return NotFound();
-        }
 
         public async Task<IActionResult> Update(int? id)
         {

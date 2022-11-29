@@ -8,6 +8,18 @@
 <html>
 <head>
     <title>Магазин строительных материалов</title>
+    <tr>
+        <td>
+            <a asp-action="GetOrders" asp-controller="Order">Заказы</a>
+            <a asp-action="GetClients" asp-controller="Clients">Клиенты</a>
+            <a asp-action="GetDeliverys" asp-controller="Delivery">Курьеры</a>
+            <a asp-action="GetGoods" asp-controller="Goods">Товары</a>
+            <a asp-action="GetAll" asp-controller="GoodsInOrder">Товары в заказе</a>
+            <a asp-action="GetAll" asp-controller="SalesManager">Менеджеры</a>
+            <a asp-action="GetPickers" asp-controller="Picker">Сборщики</a>
+            <a asp-action="GetProviders" asp-controller="Provider">Поставщики</a>
+        </td>
+    </tr>
 </head>
 <body>
     <h3>Заказы(Be update)</h3>

@@ -1,5 +1,45 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<WoodStore.Models.Entity.Picker>
 @{
+    ViewData["Title"] = "Сборщики";
+
 }
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Магазин строительных материалов</title>
+    <tr>
+        <td>
+            <a asp-action="GetOrders" asp-controller="Order">Заказы</a>
+            <a asp-action="GetClients" asp-controller="Clients">Клиенты</a>
+            <a asp-action="GetDeliverys" asp-controller="Delivery">Курьеры</a>
+            <a asp-action="GetGoods" asp-controller="Goods">Товары</a>
+            <a asp-action="GetAll" asp-controller="GoodsInOrder">Товары в заказе</a>
+            <a asp-action="GetAll" asp-controller="SalesManager">Менеджеры</a>
+            <a asp-action="GetPickers" asp-controller="Picker">Сборщики</a>
+            <a asp-action="GetProviders" asp-controller="Provider">Поставщики</a>
+        </td>
+    </tr>
+</head>
+<body>
+    <h3>Сборщики(Be update)</h3>
+    <table class="table-condensed">
+        <tr>
+            <td>ФИО</td>
+            <td>Номер телефона</td>
+            
+        </tr>
+        @foreach (var picker in Model)
+        {
+            <tr>
+                <td>@picker.FullName</td>
+                <td>@picker.Telephone</td>
+                <td>
+                    <a asp-action="Update" asp-controller="Picker" asp-route-id="@picker.Id">Изменить</a> |
+                    <a asp-action="Delete" asp-controller="Picker" asp-route-id="@picker.Id">Удалить</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

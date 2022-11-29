@@ -34,17 +34,7 @@ namespace WoodStore.Controllers
         {
             return View(db.SalesManager.ToList());
         }
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id != null)
-            {
-                SalesManager salesManager = await db.SalesManager.FirstOrDefaultAsync(p => p.Id == id);
-                if (salesManager != null)
-                    return View(salesManager);
-            }
-            return NotFound();
-        }
-
+      
         public async Task<IActionResult> Update(int? id)
         {
             if (id != null)

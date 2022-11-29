@@ -34,16 +34,6 @@ namespace WoodStore.Controllers
         {
             return View(db.Picker.ToList());
         }
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id != null)
-            {
-                Picker picker = await db.Picker.FirstOrDefaultAsync(p => p.Id == id);
-                if (picker != null)
-                    return View(picker);
-            }
-            return NotFound();
-        }
 
         public async Task<IActionResult> Update(int? id)
         {
