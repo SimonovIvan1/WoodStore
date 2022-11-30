@@ -33,7 +33,7 @@ namespace WoodStore.Controllers
         }
         public IActionResult GetClients()
         {
-            return View(db.Clients.ToList());
+            return View(db.Clients.OrderBy(x => x.Name).ToList()); 
         }
         public async Task<IActionResult> Details(int? id)
         {

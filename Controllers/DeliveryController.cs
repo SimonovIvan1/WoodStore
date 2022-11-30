@@ -32,7 +32,7 @@ namespace WoodStore.Controllers
         }
         public IActionResult GetDeliverys()
         {
-            return View(db.Delivery.ToList());
+            return View(db.Delivery.ToList().Skip(2));
         }
 
         public async Task<IActionResult> Update(int? id)
