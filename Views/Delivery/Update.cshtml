@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model WoodStore.Models.Entity.Delivery
 @{
+    ViewBag.Title = "Редактирование информации о Курьере";
 }
+<form asp-action="Update" asp-controller="Delivery" asp-route-id="@Model.Id">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Имя</label>
+        <input type="text" asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Telephone" class="control-label">Номер телефона</label>
+        <input type="text" asp-for="Telephone" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="CarNumber" class="control-label">Номер машины</label>
+        <input type="text" asp-for="CarNumber" class="form-control" />
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Сохранить" class="btn btn-default" />
+    </div>
+</form>

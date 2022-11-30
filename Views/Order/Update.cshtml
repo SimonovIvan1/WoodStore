@@ -4,19 +4,19 @@
 }
 <form asp-action="Update" asp-controller="Order" asp-route-id="@Model.Id">
     <div class="form-group">
-        <label asp-for="Date" class="control-label">Имя</label>
+        <label asp-for="Date" class="control-label">Дата оформления</label>
         <input type="text" asp-for="Date" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="ClientsId" class="control-label">Размер товара</label>
+        <label asp-for="ClientsId" class="control-label">Идентификатор клиента</label>
         <input type="text" asp-for="ClientsId" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="Price" class="control-label">Материал изготовления</label>
+        <label asp-for="Price" class="control-label">Цена</label>
         <input type="text" asp-for="Price" class="form-control" />
     </div>
     <div class="form-group">
-        <label asp-for="SalesManagerId" class="control-label">Материал изготовления</label>
+        <label asp-for="SalesManagerId" class="control-label">Идентификатор менеджера</label>
         <input type="text" asp-for="SalesManagerId" class="form-control" />
     </div>
     <div class="form-group">
