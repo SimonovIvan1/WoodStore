@@ -32,7 +32,7 @@ namespace WoodStore.Controllers
         }
         public IActionResult GetProviders()
         {
-            return View(db.Provider.ToList());
+            return View(db.Provider.ToList().Take(10));
         }
        
         public async Task<IActionResult> Update(int? id)

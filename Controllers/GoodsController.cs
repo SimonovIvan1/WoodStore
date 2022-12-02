@@ -31,7 +31,17 @@ namespace WoodStore.Controllers
         }
         public IActionResult GetGoods()
         {
-            return View(db.Goods.ToList());
+            /*var goods = db.Goods.Join(db.Provider, // второй набор
+            u => u.ProviderId, // свойство-селектор объекта из первого набора
+            c => c.Id, // свойство-селектор объекта из второго набора
+            (u, c) => new // результат
+                {
+                    Name = u.Name,
+                    Company = c.Name,
+                    Age = u.Material
+                });*/
+            
+            return View(db.Goods.ToList().Distinct());
         }
         public async Task<IActionResult> Details(int? id)
         {
